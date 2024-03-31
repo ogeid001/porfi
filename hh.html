@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>¿Me quieres?</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        margin: 0;
+        padding: 0;
+    }
+
+    h1 {
+        margin: 20px 0 10px;
+    }
+
+    #container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+
+    #siButton, #noButton {
+        margin: 10px;
+        padding: 10px 20px;
+        font-size: 16px;
+    }
+
+    #noButton {
+        position: relative;
+    }
+
+    #respuesta {
+        margin: 20px;
+    }
+
+    #imagen {
+        width: 200px;
+        margin-bottom: 20px;
+    }
+</style>
+</head>
+<body>
+    <div id="container">
+        <h1>¿Me quieres?</h1>
+        <img id="imagen" src="https://previews.123rf.com/images/thiradech/thiradech1601/thiradech160101592/51877767-mu%C3%B1ecos-de-mono-con-rosas-de-amor-fondo-de-la-vendimia.jpg" alt="Imagen">
+        <button id="siButton" onclick="mostrarRespuesta()">Sí</button>
+        <button id="noButton" onclick="moverBoton()">No</button>
+        <div id="respuesta" style="display:none;">
+            <p>Yo te quiero más.</p>
+        </div>
+    </div>
+
+    <script>
+        function mostrarRespuesta() {
+            document.getElementById("respuesta").style.display = "block";
+        }
+
+        function moverBoton() {
+            var botonNo = document.getElementById("noButton");
+            var screenWidth = window.innerWidth;
+            var screenHeight = window.innerHeight;
+            var randomX = Math.floor(Math.random() * (screenWidth - 100));
+            var randomY = Math.floor(Math.random() * (screenHeight - 100));
+            botonNo.style.top = randomY + "px";
+            botonNo.style.left = randomX + "px";
+        }
+    </script>
+</body>
+</html>
